@@ -5,7 +5,7 @@ class leet2299 {
         if (password.length() < 8) {
             return false;
         }
-        char[] chars = password.toCharArray();
+        char[] cc = password.toCharArray();
         return cc.length > 7 && hasTowSameWord(cc) && hasLowerWord(cc) && hasUpperWord(cc) && hasSpeWord(cc) && hasNumWord(cc);
     }
 

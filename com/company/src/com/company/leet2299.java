@@ -6,7 +6,12 @@ class leet2299 {
             return false;
         }
         char[] cc = password.toCharArray();
-        return cc.length > 7 && hasTowSameWord(cc) && hasLowerWord(cc) && hasUpperWord(cc) && hasSpeWord(cc) && hasNumWord(cc);
+        return cc.length > 7
+                && hasTowSameWord(cc)
+                && hasLowerWord(cc)
+                && hasUpperWord(cc)
+                && hasSpeWord(cc)
+                && hasNumWord(cc);
     }
 
     public boolean hasTowSameWord(char[] chars) {
@@ -19,8 +24,8 @@ class leet2299 {
     }
 
     public boolean hasLowerWord(char[] chars) {
-        for (int i = 0; i < chars.length; i++) {
-            if (chars[i] >= 'a' && chars[i] <= 'z') {
+        for (char aChar : chars) {
+            if (aChar >= 'a' && aChar <= 'z') {
                 return true;
             }
         }
@@ -28,8 +33,8 @@ class leet2299 {
     }
 
     public boolean hasUpperWord(char[] chars) {
-        for (int i = 0; i < chars.length; i++) {
-            if (chars[i] >= 'A' && chars[i] <= 'Z') {
+        for (char aChar : chars) {
+            if (aChar >= 'A' && aChar <= 'Z') {
                 return true;
             }
         }
@@ -39,19 +44,19 @@ class leet2299 {
     public boolean hasSpeWord(char[] chars) {
         final String spe = "!@#$%^&*()-+";
         char[] spes = spe.toCharArray();
-        for (int i = 0; i < chars.length; i++) {
-            for (int j = 0; j < spes.length; j++) {
-                if (chars[i] == spes[j]) {
+        for (char aChar : chars) {
+            for (char c : spes) {
+                if (aChar == c) {
                     return true;
                 }
             }
         }
-            return false;
+        return false;
     }
 
     public boolean hasNumWord(char[] chars) {
-        for (int i = 0; i < chars.length; i++) {
-            if (chars[i] >= '0' && chars[i] <= '9') {
+        for (char aChar : chars) {
+            if (aChar >= '0' && aChar <= '9') {
                 return true;
             }
         }

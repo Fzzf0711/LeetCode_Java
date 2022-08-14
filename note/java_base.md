@@ -81,4 +81,33 @@
 
     catch 语句包含要捕获异常类型的声明，当保护代码块中发生一个异常时，try后面的catch块就会被检查。如果发生的异常包含在catch块中，异常会被传递到catch块。
 
-### 1.3.4 
+### 1.3.4 抽象类和接口
+抽象类
+特点:
+1. 抽象类中可以构造方法
+2. 抽象类中可以存在普通属性，方法，静态属性和方法。
+3. 抽象类中可以存在抽象方法。
+4. 如果一个类中有一个抽象方法，那么当前类一定是抽象类；抽象类中不一定有抽象方法。
+5. 抽象类中的抽象方法，需要有子类实现，如果子类不实现，则子类也需要定义为抽象的。
+6. 抽象类不能被实例化，抽象类和抽象方法必须被abstract修饰
+
+关键字使用注意：
+抽象类中的抽象方法（其前有abstract修饰）不能用private、static、synchronized、native访问修饰符修饰。
+
+接口
+1. 在接口中只有方法的声明，没有方法体。
+2. 在接口中只有常量，因为定义的变量，在编译的时候都会默认加上public static final
+3. 在接口中的方法，永远都被public来修饰。
+4. 接口中没有构造方法，也不能实例化接口的对象。（所以接口不能继承类）
+5. 接口可以实现多继承
+6. 接口中定义的方法都需要有实现类来实现，如果实现类不能实现接口中的所有方法则实现类定义为抽象类。
+7. 接口可以继承接口，用extends
+
+### 1.3.5 HashMap 与 HashTable的区别
+1. 继承的父类不同：HashTable继承Dictory类，HashMap继承AbstractMap.但都实现了Map接口；
+2. 线程安全性不同：HashTable是线程安全的,适用于多线程；HashMap是非线程安全，更适合于单线程；
+3. 是否提供contains方法：HashTable中保留了contains方法，与constainsValue功能相同；HashMap中去掉了contains方法；
+4. key和value是否可为null值：HashTable的key、value都不允许null值；HashMap，null可以作为key；
+5. 遍历方式的内部实现不同：HashTable、HashMap都使用了Iterator，HashTable还使用过Enumeration方式；
+6. hash值不同：HashTable直接使用对象的hashCode，而HashMap重新计算hash值。
+7. 内部使用的数组初始化和扩容方式不同：Hashtable不要求底层数组的容量一定要为2的整数次幂，而HashMap则要求一定为2的整数次幂；Hashtable扩容时，将容量变为原来的2倍加1，而HashMap扩容时，将容量变为原来的2倍。
